@@ -1,0 +1,13 @@
+---
+version: '3.9'
+
+services:
+  runner-build:
+    build: 
+        context: ./configs
+        dockerfile: Dockerfile
+    image: githubactions-runner:latest
+
+  runner-service:
+    image: githubactions-runner:latest
+    env_file: configs/env
