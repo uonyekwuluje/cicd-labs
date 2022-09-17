@@ -11,23 +11,6 @@ pipeline {
   
   
   stages{
-    stage("Set Parameters") {
-      steps {
-        script {
-          properties([
-               parameters {
-                  choice choices: ['production', 'uat', 'dev'], description: 'Build Environment', name: 'Environment'
-                  validatingString(name: 'StackName',
-                     defaultValue: '',
-                     failedValidationMessage: 'Stack name can only consist of Alphanumeric and dash characters',
-                     description: 'The name of the CloudFormation stack to create',
-                     regex: '[-a-zA-Z0-9]+')
-               }
-          ])
-        }
-      }
-    }
-
     stage('Test Parameters') {
 	    steps {
 		  script {
