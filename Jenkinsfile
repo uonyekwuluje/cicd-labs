@@ -1,6 +1,7 @@
 pipeline {
-  agent any
-  
+  agent {
+      label 'base'
+  }
   stages{
     stage('Validate Docker') {
       steps {
