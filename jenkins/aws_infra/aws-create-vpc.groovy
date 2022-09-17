@@ -14,7 +14,7 @@ pipeline {
     stage('Test Parameters') {
 	    steps {
 		  script {
-			 def message = "AWS StackName => ${params.StackName} in Environment => ${params.Environment}"
+			 def message = "AWS StackName => ${params.StackName}\nEnvironment => ${params.Environment}"
 			 echo message
 		}
 	  }
