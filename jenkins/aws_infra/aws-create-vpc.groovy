@@ -14,7 +14,7 @@ pipeline {
 	string(name: 'StackName',
 	       trim: true,
 	       description: 'Enter Stack.')
-    validatingString(name: 'VStackName',
+    validatingString(name: 'StackName',
 			 defaultValue: '',
 			 failedValidationMessage: 'Stack name can only consist of Alphanumeric and dash characters',
 			 description: 'The name of the CloudFormation stack to create',
