@@ -16,10 +16,7 @@ pipeline {
         script {
           properties([
                parameters {
-                  choice choices: ['production', 'uat', 'dev'], description: '', name: 'Environment'
-                  string(name: 'StackName',
-                     trim: true,
-                     description: 'Enter Stack.')
+                  choice choices: ['production', 'uat', 'dev'], description: 'Build Environment', name: 'Environment'
                   validatingString(name: 'StackName',
                      defaultValue: '',
                      failedValidationMessage: 'Stack name can only consist of Alphanumeric and dash characters',
