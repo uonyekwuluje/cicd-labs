@@ -9,7 +9,7 @@ pipeline {
 
   parameters {
         choice name: 'ServerClasses', choices: server_classes, description: ''
-        choice name: 'SubClas', choices: ['Nedi', 'Semmatec', 'Norton'], description: ''
+        choice name: 'SubClass', choices: ['Nedi', 'Semmatec', 'Norton'], description: ''
   }
 
   stages{
@@ -22,7 +22,7 @@ pipeline {
     stage('Test Parameters') {
 	    steps {
 		  script {
-			 def message = "Stack Name => ${params.ServerClasses}\n"
+			 def message = "ServerClass Name => ${params.ServerClasses}\nSubClass => ${params.SubClass}"
 			 echo message
 		}
 	  }
